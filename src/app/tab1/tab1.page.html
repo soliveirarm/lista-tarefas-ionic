@@ -7,15 +7,16 @@
 <ion-content color="light">
   <ion-list [inset]="true">
 
-    <ion-item *ngFor = "let task of tasks">
-      <ion-checkbox>{{task.title}}</ion-checkbox>
-    </ion-item>
-    
     <ion-item>
       <ion-input [(ngModel)]="taskTitle" aria-label="Adicionar nova tarefa" placeholder="Adicionar tarefa"></ion-input>
       <ion-button (click)="addTask()">
         <ion-icon name="add-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
+    
+    <ion-item *ngFor = "let task of tasks">
+      <ion-checkbox>{{task.title}}</ion-checkbox>
+    </ion-item>
+    
   </ion-list>
 </ion-content>
