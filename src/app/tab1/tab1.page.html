@@ -4,19 +4,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item>
-      <ion-checkbox>Varrer a casa</ion-checkbox>
+<ion-content color="light">
+  <ion-list [inset]="true">
+
+    <ion-item *ngFor = "let task of tasks">
+      <ion-checkbox>{{task.title}}</ion-checkbox>
     </ion-item>
+    
     <ion-item>
-      <ion-checkbox>Fazer macarrão</ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-checkbox>Desenvolver o app de tarefas</ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-checkbox>Lavar roupas</ion-checkbox>
+      <ion-input [(ngModel)]="taskTitle" aria-label="Adicionar nova tarefa" placeholder="Adicionar tarefa"></ion-input>
+      <ion-button (click)="addTask()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
